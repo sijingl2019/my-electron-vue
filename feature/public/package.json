@@ -1,0 +1,31 @@
+{
+  "name": "qiko-system-feature",
+  "pluginName": "系统菜单",
+  "description": "系统菜单",
+  "main": "index.html",
+  "logo": "/logo.png",
+  "version": "0.0.0",
+  "preload":"preload.js",
+  "pluginType": "ui",
+  "features": [
+    {
+      "code": "finder",
+      "explain": "插件市场",
+      "cmds":[
+        "插件市场"
+      ]
+    },{
+      "code": "installed",
+      "explain": "已安装插件",
+      "cmds":[
+        "已安装插件", "installed"
+      ]
+    },{
+      "code": "settings",
+      "explain": "偏好设置",
+      "cmds":[
+        "偏好设置"
+      ]
+    }
+  ]
+}
