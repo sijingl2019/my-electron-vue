@@ -98,11 +98,17 @@ class API extends DBInstance {
         ? 'http://localhost:8083/#/'
         : `file://${__static}/tpl/index.html`;
     }
-    if (plugin.name === 'qiko-system-feature') {
+    if (
+      plugin.name === 'qiko-system-feature' ||
+      plugin.name === 'agent' ||
+      plugin.name === '智能体宇宙'
+    ) {
+      const port = plugin.feature?.code === 'agent' ? '8084' : '8081';
+      const model = plugin.feature?.code === 'agent' ? 'agent' : 'feature';
       plugin.logo = plugin.logo || `file://${__static}/logo.png`;
       plugin.indexPath = commonConst.dev()
-        ? 'http://localhost:8081/#/'
-        : `file://${__static}/feature/index.html`;
+        ? `http://localhost:${port}/#/`
+        : `file://${__static}/${model}/index.html`;
     } else if (!plugin.indexPath) {
       const pluginPath = path.resolve(baseDir, 'node_modules', plugin.name);
       plugin.indexPath = `file://${path.join(

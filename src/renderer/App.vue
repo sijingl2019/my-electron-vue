@@ -67,6 +67,9 @@ const {
   changePluginHistory,
 } = createPluginManager();
 
+console.log(clipboardFile.value, 'clipboardFile');
+console.log(pluginHistory, 'pluginHistory');
+
 initPlugins();
 
 const currentSelect = ref(0);
@@ -86,6 +89,8 @@ getPluginInfo({
 watch(
   [options, pluginHistory, currentPlugin],
   () => {
+    console.log(pluginHistory, 'pluginHistory');
+    console.log(options, 'options');
     currentSelect.value = 0;
     if (currentPlugin.value.name) return;
     window.qiko.setExpendHeight(

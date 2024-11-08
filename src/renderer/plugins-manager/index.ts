@@ -48,6 +48,8 @@ const createPluginManager = (): any => {
       type: 'dbGet',
       data: { id: PLUGIN_HISTORY },
     });
+    console.log(appList.value, 'appList');
+    console.log(result, 'plugin history');
     if (result && result.value) {
       appList.value.push(...result.value);
     }
@@ -82,6 +84,8 @@ const createPluginManager = (): any => {
     });
     window.initQiko();
     if (plugin.pluginType === 'ui' || plugin.pluginType === 'system') {
+      console.log(state.currentPlugin, 'state.currentPlugin');
+      console.log(plugin, 'selected plugin');
       if (state.currentPlugin && state.currentPlugin.name === plugin.name) {
         window.qiko.showMainWindow();
         return;

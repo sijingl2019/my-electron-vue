@@ -15,10 +15,10 @@
         "插件市场"
       ]
     },{
-      "code": "models",
+      "code": "agent",
       "explain": "智能体宇宙",
       "cmds":[
-        "智能体宇宙", "models"
+        "智能体宇宙", "agent"
       ]
     },{
       "code": "installed",

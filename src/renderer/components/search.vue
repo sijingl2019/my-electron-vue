@@ -153,7 +153,7 @@ const checkNeedInit = (e) => {
 };
 
 const targetSearch = ({ value }) => {
-  console.log(props.currentPlugin, 'current plugin');
+  console.log(props.currentPlugin.name, 'current plugin');
   if (props.currentPlugin.name) {
     return ipcRenderer.sendSync('msg-trigger', {
       type: 'sendSubInputChangeEvent',
@@ -177,7 +177,7 @@ const openDevTool = () => {
 const showSeparate = () => {
   let pluginMenu: any = [
     {
-      label: '开发者工具',
+      label: 'Main开发者工具',
       click: openDevTool,
     },
     {
